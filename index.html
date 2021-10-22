@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<h2>第一题</h2>
+	<body>
+		<script>
+			//第一题
+			let a1 = 1;
+			let b1 = 1;
+			if (a1>b1) {
+				document.write('a大于b');
+			}else if (a1<b1) {
+				document.write('a小于b');
+			}else {
+				document.write('a等于b');
+			}
+			document.write('<hr>');
+			//第二题
+			document.write('<h2>第二题</h2>');
+			let a = 105;
+			if (a%5 == 0) {
+				document.write('可以被5整除');
+				document.write(` ${a/5}`);
+			}else {
+				document.write('不可以被5整除');
+			}
+			document.write('<hr>');
+			//第三题
+			document.write('<h2>第三题</h2>');
+			for(let i=0 ;i<=100 ;i++) {
+				if(i%2 ==0) {
+					document.write(` ${i} `);
+				}
+			}
+			document.write('<hr>');
+			//第四题
+			document.write('<h2>第四题</h2>');
+			let s = 1;
+			while(s<100) {
+				if (s%7 == 0) {
+					document.write(` ${s}`);
+				}
+				s++;
+			}
+			document.write('<hr>');
+			//第五题
+			document.write('<h2>第五题</h2>')
+			let a2 = 6;
+			let b2 = 5;
+			let c2 = 4;
+			if(b2<a2 && c2<a2) {
+				document.write(a2);
+				document.write(' a最大');
+			}else if(a2<b2 && c2<b2) {
+				document.write(b2);
+				document.write(' b最大');
+			}else if(a2<c2 && b2<c2) {
+				document.write(c2);
+				document.write(' c最大');
+			}else {
+				document.write('无法输出');
+			}
+			document.write('<hr>');
+			//第六题
+			document.write('<h2>第六题</h2>');
+			let f = '';
+			for(let i=0 ;i<=100;i++) {
+				if(i%2 == 0){
+					document.write(` ${i}`);
+				}else {
+					f += i+' ';
+				}
+			}
+			document.write('<br />')
+			document.write(`奇数 ${f} `);
+			document.write('<hr>');
+			//第七题
+			document.write('<h2>第七题</h2>');
+			document.write('在控制台中修改函数test([])中括号中填写数组改变结果');
+			document.write('<br>');
+			function test(a) {
+				let c = '';
+				let b = 0;
+				for(let i = a.length -1; i>=0 ;i--) {
+					b += a[i];
+					if(i == 0) {
+						c += a[i] + '=';
+						continue;
+					}
+					c += a[i] + '+';
+				}
+				document.write(c+b);
+			}
+			test([1,2,3,4]);
+			document.write('<hr>');
+			//第八题
+			document.write('<h2>第八题</h2>');
+			document.write('请输入a: ');
+			document.write('<input type="text" class="a">');
+			document.write('<br>');
+			document.write('请输入b:');
+			document.write('<input type="text" class="b">');
+			document.write('<br>');
+			document.write('<button>比较</button>');
+			document.write('<p></p>');
+			const inputa = document.querySelector('.a');
+			const inputb = document.querySelector('.b');
+			const para = document.querySelector('p');
+			document.querySelector('button').onclick = function(e) {
+				if (isNaN(inputa.value) || isNaN(inputb.value)) {
+					para.textContent = '请输入数字';
+				}else {
+					if(Math.floor(inputa.value) > Math.floor(inputb.value)) {
+						para.textContent = 'a的数值大';
+					}else if (Math.floor(inputa.value) < Math.floor(inputb.value)) {
+						para.textContent = 'b的数值大';
+					}else {
+						para.textContent = 'a等于b';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
